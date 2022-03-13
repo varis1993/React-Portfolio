@@ -38,25 +38,31 @@ const PhotoList = ({ category }) => {
     },
     {
       name: 'Cat green eyes',
-      category: 'portraits',
+      category: 'portfolio',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Green parrot',
-      category: 'portraits',
+      category: 'portfolio',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Yellow macaw',
-      category: 'portraits',
+      category: 'portfolio',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Pug smile',
-      category: 'portraits',
+      category: 'portfolio',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+    },
+    {
+      name: 'Pug smile',
+      category: 'portfolio',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
@@ -136,7 +142,8 @@ const PhotoList = ({ category }) => {
       )}
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
-          <img
+         
+         <img
             src={require(`../../assets/small/${category}/${i}.jpg`).default}
             alt={image.name}
             className="img-thumbnail mx-1"

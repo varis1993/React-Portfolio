@@ -8,7 +8,9 @@ function Nav(props) {
     contactSelected,
     currentCategory,
     setContactSelected,
-  } = props;
+    setCurrentPage,
+    currentPage
+   } = props;
 
   useEffect(() => {
     document.title = capitalizeFirstLetter(currentCategory.name);
@@ -17,32 +19,37 @@ function Nav(props) {
   return (
     <header className="flex-row px-1">
       <h2>
-        <a data-testid="link" href="/">
+        <a data-testid="link" onClick={()=>setCurrentPage("about")} href="#">
           <span role="img" aria-label="camera"></span> Tavaris Thompson
           
         </a>
       </h2>
       <nav>
         <ul className="flex-row">
-          <li className="mx-2">
-            <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
+          <li className="mx-1">
+            <a data-testid="about"className={currentPage==="about"?  " navActive" :"" } onClick={() => {
+              setContactSelected(false)
+              setCurrentPage("about")
+              }}>
               About me
             </a>
           </li>
-          <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-            <span onClick={() => setContactSelected(true)}>Contact</span>
+          <li className={currentPage==="contact"?  "mx-1 navActive" :"mx-1" }>
+            <span onClick={() => {
+              setContactSelected(true)
+              setCurrentPage("contact")
+              }}>Contact</span>
           </li>
           {categories.map((category) => (
             <li
-              className={`mx-1 ${
-                currentCategory.name === category.name && !contactSelected && 'navActive'
-                }`}
-              key={category.name}
+            
             >
               <span
+              className={currentPage===category.name?  "mx-1 navActive" :"mx-1" }
                 onClick={() => {
                   setCurrentCategory(category);
                   setContactSelected(false);
+                  setCurrentPage(category.name)
                 }}
               >
                 {capitalizeFirstLetter(category.name)}

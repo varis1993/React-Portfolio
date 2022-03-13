@@ -6,33 +6,33 @@ import ContactForm from './components/Contact';
 
 function App() {
   const [categories] = useState([
-    {
-      name: 'commercial',
-      description: 'Photos of grocery stores, food trucks, and other commercial projects',
-    },
-    { name: 'portraits', description: 'Portraits of people in my life' },
-    { name: 'food', description: 'Delicious delicacies' },
-    { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
+    { name: 'portfolio', description: '' },
+    { name: 'resume', description: '' },
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   const [contactSelected, setContactSelected] = useState(false);
+  const [currentPage,setCurrentPage]=useState("about")
 
   return (
     <div>
       <Nav
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage}
         categories={categories}
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
         contactSelected={contactSelected}
         setContactSelected={setContactSelected}
       ></Nav>
+
+      {console.log("currentPage",currentPage)}
       <main>
-        {!contactSelected ? (
+        {currentPage !="contact" ? (
           <>
-            <Gallery currentCategory={currentCategory}></Gallery>
-            <About></About>
+            {currentPage==="about"?<About></About>:<Gallery currentCategory={currentCategory}></Gallery>} 
+            
           </>
         ) : (
           <ContactForm></ContactForm>
