@@ -7,36 +7,6 @@ const PhotoList = ({ category }) => {
 
   const [photos] = useState([
     {
-      name: 'Grocery aisle',
-      category: 'commercial',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Grocery booth',
-      category: 'commercial',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Building exterior',
-      category: 'commercial',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Restaurant table',
-      category: 'commercial',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Cafe interior',
-      category: 'commercial',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
       name: 'Cat green eyes',
       category: 'portfolio',
       description:
@@ -142,7 +112,7 @@ const PhotoList = ({ category }) => {
       )}
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
-         
+         <>
          <img
             src={require(`../../assets/small/${category}/${i}.jpg`).default}
             alt={image.name}
@@ -150,6 +120,11 @@ const PhotoList = ({ category }) => {
             onClick={() => toggleModal(image, i)}
             key={image.name}
           />
+          <div>
+           <a href="" >github</a>
+           <a href="">live </a>
+           </div>
+          </>
         ))}
       </div>
     </div>
