@@ -1,0 +1,74 @@
+
+.img-link {
+    text-align: center;
+}
+
+.footer-info {
+    font-size: 24px;
+    color: var(--orange-soda);
+    font-weight: bold;
+    background-color: var(--platinum);
+    text-align: center;
+}
+
+h1 {
+    margin: auto 30px;
+    padding: 10px;
+    color: var(--onyx);
+    font-weight: bold;
+}
+
+#topics {
+    font-size: small;
+    font-style: italic;
+    color: var(--onyx);
+}
+
+#card-title {
+    margin-top: 10px;
+    color: var(--onyx);
+    text-shadow: 1px 1px 6px var(--sandy-brown);
+}
+
+#footer {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.icon {
+    padding: 10px;
+}
+
+#contact-section {
+    justify-content: center;
+    margin: 20px;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.error-text {
+    color: var(--orange-soda);
+}
+
+#footer {
+    background-color: var(--onyx);
+}
+
+#footer .icon {
+    background-color: var(--onyx);
+    margin-top: 20px;
+}
+
+#footer p {
+    background-color: var(--onyx);
+    margin-top: 8px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: var(--orange-soda);
+}
+
+#react-icon {
+    background-color: var(--onyx);
+}

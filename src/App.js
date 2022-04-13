@@ -39,6 +39,7 @@ function App() {
           <ContactForm></ContactForm>
         )}
       </main>
+      <Footer />
     </div>
   );
 }
